@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   def index
-    #artists_and_urls = {"Jackmaster": "https://www.residentadvisor.net/dj/jackmaster/dates?ctry=3", "Hunee": "https://www.residentadvisor.net/dj/hunee/dates?ctry=3", "Eats Everything": "https://www.residentadvisor.net/dj/eatseverything/dates?ctry=3"}
     artists_and_urls = create_dictionary()
     artist_events_and_location = {}
     artists_and_urls.each do |artist, url|
