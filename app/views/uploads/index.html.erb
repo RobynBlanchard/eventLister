@@ -11,6 +11,13 @@
       <td><%= upload.artist %></td>
       <td><%= upload.url %></td>
       <td><%= link_to 'Show', upload_path(upload) %></td>
+      <td><%= link_to 'Destroy', upload_path(upload),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Listings', events_index_path %>
+<%= link_to 'List of uploads', uploads_path %>
