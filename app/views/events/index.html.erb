@@ -1,0 +1,8 @@
+<% @results.each do |result| %>
+<h1><%= result[0] %><br /></h1>
+<% result[1].each do |key,value| %>
+<%= key %><br />
+<%= value %><br />
+<br />
+<% end %>
+<% end %>
