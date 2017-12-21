@@ -1,4 +1,7 @@
 class UploadsController < ApplicationController
+  def index
+    @uploads = Upload.all
+  end
   def new
   end
 
@@ -11,6 +14,5 @@ class UploadsController < ApplicationController
 
     @upload.save
     redirect_to @upload
-
   end
 end

@@ -1,0 +1,16 @@
+<h1>Listing uploads</h1>
+
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Url</th>
+  </tr>
+
+  <% @uploads.each do |upload| %>
+    <tr>
+      <td><%= upload.artist %></td>
+      <td><%= upload.url %></td>
+      <td><%= link_to 'Show', upload_path(upload) %></td>
+    </tr>
+  <% end %>
+</table>
