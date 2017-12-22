@@ -13,11 +13,11 @@ class UploadsController < ApplicationController
 
   def create
     artist = params[:artist]
-    url = mechanise(artist)
-    if url.nil? == true
+    @url = mechanise(artist)
+    if @url.nil? == true
       render 'new'
     else
-      @upload = Upload.new(artist: artist, url: url)
+      @upload = Upload.new(artist: artist, url: @url)
       @upload.save
       redirect_to @upload
     end
@@ -29,6 +29,7 @@ class UploadsController < ApplicationController
 
     redirect_to uploads_path
   end
+
 
   def mechanise(artist_name)
     require 'mechanize'

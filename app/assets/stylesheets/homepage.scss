@@ -1,0 +1,31 @@
+// Place all the styles related to the Homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+div.centered {
+    height: 20em;
+    position: relative }
+div.centered h1 {
+   font-size: 60px;
+   
+   margin: 0;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%) }
+#listings {
+   margin: 0;
+   position: absolute;
+   color: white;
+   left: 50%;
+   bottom: 20%;
+   transform: translate(-50%, -50%) }
+#uploads {
+   margin: 0;
+   position: absolute;
+   color: white;
+   left: 50%;
+   bottom: 10%;
+   transform: translate(-50%, -50%) }

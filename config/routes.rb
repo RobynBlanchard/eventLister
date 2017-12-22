@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'events#index'
+  get 'homepage/index'
+
+  root 'homepage#index'
   resources :uploads
   get 'events/index'
   #get '/index' => 'homepage#index'

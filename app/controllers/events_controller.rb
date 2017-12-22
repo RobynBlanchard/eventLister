@@ -41,4 +41,5 @@ class EventsController < ApplicationController
     end
     artists_and_urls
   end
+
 end
