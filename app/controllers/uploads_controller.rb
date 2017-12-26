@@ -1,24 +1,24 @@
 class UploadsController < ApplicationController
   def index
-    @uploads = Upload.all
+    @artists = Artist.all
   end
   def new
   end
 
   def show
-    @upload = Upload.find(params[:id])
+    @artist = Artist.find(params[:id])
   end
 
   def create
-    @upload = Upload.new(params.require(:upload).permit(:artist, :url))
+    @artist = Artist.new(params.require(:upload).permit(:artist_name, :url))
 
-    @upload.save
-    redirect_to @upload
+    @artist.save
+    redirect_to @artist
   end
 
   def destroy
-    @upload = Upload.find(params[:id])
-    @upload.destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy
 
     redirect_to uploads_path
   end

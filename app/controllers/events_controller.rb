@@ -31,10 +31,10 @@ class EventsController < ApplicationController
   end
 
   def create_dictionary()
-    @uploads = Upload.all
+    @artists = Artist.all
     artists_and_urls = {}
-    @uploads.each do |upload|
-      artists_and_urls[upload.artist] = upload.url
+    @artists.each do |artist|
+      artists_and_urls[artist.artist_name] = artist.url
     end
     artists_and_urls
   end
