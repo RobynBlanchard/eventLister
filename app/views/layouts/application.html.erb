@@ -9,6 +9,25 @@
   </head>
 
   <body>
+    <header class='clearfix'>
+    <div class="left-nav">
+      <ul>
+        <li><%= link_to "Home", homepage_index_path %></li>
+      </ul>
+    </div>
+    <div class="middle-nav">
+      <ul>
+        <li><%= link_to "List Artists", listings_index_path %></li>
+      </ul>
+    </div>
+    <div class="right-nav">
+      <ul>
+        <li><%= link_to "Add Artist", new_artist_path %></li>
+      </ul>
+    </div>
+  </header>
+  <div class='content'>
     <%= yield %>
+  </div>
   </body>
 </html>

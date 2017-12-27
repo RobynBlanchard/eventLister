@@ -1,3 +1,4 @@
+<body class="background">
 <% Artist.all.each do |artist| %>
   <h1 ><%= artist.artist_name %></h1>
   <% events = Event.where("artist_id = #{artist.id}") %>
@@ -9,3 +10,4 @@
 </br>
 <% end %>
 <%= link_to 'New artist', new_artist_path %>
+</body>
