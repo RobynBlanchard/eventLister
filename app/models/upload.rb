@@ -1,2 +1,2 @@
-class Upload < ApplicationRecord
+class Artist < ApplicationRecord
 end

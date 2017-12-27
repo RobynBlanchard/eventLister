@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'listings#index'
-  resources :uploads
+  resources :artists
   get 'listings/index'
   #get '/index' => 'homepage#index'
   #resources :url_uploads

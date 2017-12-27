@@ -1,4 +1,4 @@
-<h1>Listing uploads</h1>
+<h1>Listing artists</h1>
 
 <table>
   <tr>
@@ -11,8 +11,8 @@
     <tr>
       <td><%= artist.artist_name %></td>
       <td><%= artist.url %></td>
-      <td><%= link_to 'Show', upload_path(artist) %></td>
-      <td><%= link_to 'Destroy', upload_path(artist),
+      <td><%= link_to 'Show', artist_path(artist) %></td>
+      <td><%= link_to 'Destroy', artist_path(artist),
         method: :delete,
         data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -22,5 +22,5 @@
 </table>
 
 <%= link_to 'Listings', listings_index_path %>
-<%= link_to 'List of uploads', uploads_path %>
-<%= link_to 'New upload', new_upload_path %>
+<%= link_to 'List of artists', artists_path %>
+<%= link_to 'New artist', new_artist_path %>

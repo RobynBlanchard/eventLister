@@ -1,4 +1,4 @@
-class UploadsController < ApplicationController
+class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
   end
@@ -16,12 +16,12 @@ class UploadsController < ApplicationController
     new_mechanize = MechanizeService.new
     url = new_mechanize.mechanize(artist_name)
     if url.nil? == true
-      redirect_to new_upload_path
+      redirect_to new_artist_path
     else
       @artist = Artist.new(artist_name: artist_name, url: url)
 
       @artist.save
-      redirect_to upload_path(id: @artist.id)
+      redirect_to artist_path(id: @artist.id)
     end
   end
 
@@ -29,6 +29,6 @@ class UploadsController < ApplicationController
     @artist = Artist.find(params[:id])
     @artist.destroy
 
-    redirect_to uploads_path
+    redirect_to artists_path
   end
 end
