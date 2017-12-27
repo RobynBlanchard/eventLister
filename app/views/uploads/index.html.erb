@@ -6,7 +6,8 @@
     <th>Url</th>
   </tr>
 
-  <% @artists.each do |artist| %>
+  <% if Artist.nil? == false %>
+  <% Artist.all.each do |artist| %>
     <tr>
       <td><%= artist.artist_name %></td>
       <td><%= artist.url %></td>
@@ -17,7 +18,9 @@
       </tr>
     </tr>
   <% end %>
+  <% end %>
 </table>
 
 <%= link_to 'Listings', events_index_path %>
 <%= link_to 'List of uploads', uploads_path %>
+<%= link_to 'New upload', new_upload_path %>

@@ -1,10 +1,11 @@
-<% @results.each do |result| %>
-<h1><%= result[0] %><br /></h1>
-<% result[1].each do |key,value| %>
-<%= key %><br />
-<%= value %><br />
-<br />
+<% Artist.all.each do |artist| %>
+  <h1 ><%= artist.artist_name %></h1>
+  </br>
+  <% events = Event.where("artist_id = #{artist.id}") %>
+  <% events.each do |event| %>
+    <%= event.location %>
+    </br>
+  <% end %>
+</br>
 <% end %>
-<% end %>
-
 <%= link_to 'Url Upload', new_upload_path %>
