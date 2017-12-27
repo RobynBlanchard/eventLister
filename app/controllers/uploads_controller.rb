@@ -12,7 +12,11 @@ class UploadsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(params.require(:artist).permit(:artist_name, :url))
+    artist_name = params.require(:artist)[:artist_name]
+    new_mechanize = MechanizeService.new
+    url = new_mechanize.mechanize(artist_name)
+
+    @artist = Artist.new(artist_name: artist_name, url: url)
 
     @artist.save
     redirect_to upload_path(id: @artist.id)
