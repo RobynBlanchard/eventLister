@@ -15,11 +15,14 @@ class UploadsController < ApplicationController
     artist_name = params.require(:artist)[:artist_name]
     new_mechanize = MechanizeService.new
     url = new_mechanize.mechanize(artist_name)
+    if url.nil? == true
+      redirect_to new_upload_path
+    else
+      @artist = Artist.new(artist_name: artist_name, url: url)
 
-    @artist = Artist.new(artist_name: artist_name, url: url)
-
-    @artist.save
-    redirect_to upload_path(id: @artist.id)
+      @artist.save
+      redirect_to upload_path(id: @artist.id)
+    end
   end
 
   def destroy
