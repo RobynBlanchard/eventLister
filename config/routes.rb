@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'events#index'
+  root 'listings#index'
   resources :uploads
-  get 'events/index'
+  get 'listings/index'
   #get '/index' => 'homepage#index'
   #resources :url_uploads
 

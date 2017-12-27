@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class ListingsController < ApplicationController
   def index
     # TO DO - Refresh every hour? and only add to model if not there already
     refresh_listings
