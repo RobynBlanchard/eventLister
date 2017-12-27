@@ -1,0 +1,9 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home {
+  background-image: image-url("homepage_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'listings#index'
+  get 'homepage/index'
+
+  root 'homepage#index'
   resources :artists
   get 'listings/index'
   #get '/index' => 'homepage#index'
