@@ -1,4 +1,9 @@
 <body class="background">
+<div class="title">
+  <h1>Saved</h1>
+</div>
+
+<div class ="new-artist-form">
 <p>
   <strong>Artist:</strong>
   <%= @artist.artist_name %>
@@ -8,7 +13,7 @@
   <strong>Url:</strong>
   <%= @artist.url %>
 </p>
+</div>
 
-<%= link_to 'Listings', listings_index_path %>
-<%= link_to 'List of artists', artists_path %>
+
 </body>

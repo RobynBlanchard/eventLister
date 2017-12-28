@@ -1,17 +1,16 @@
 <body class="background">
-  <div class="title">
-<h1>Add a new artist</h1>
+<div class="title">
+  <h1>Add a new artist</h1>
 </div>
 
 <div class ="new-artist-form">
   <%= form_with scope: :artist, url: artists_path, local: true do |form| %>
-    <p>
-      <%= form.label :artist_name %><br>
-      <%= form.text_field :artist_name %>
+    <p class="input-text">
+      <%= form.text_field :artist_name, placeholder: "Artist name", :size => 60 %>
     </p>
 
-    <p>
-      <%= form.submit %>
+    <p class="submit-button">
+      <%= form.submit class: 'btn btn-default'%>
     </p>
   <% end %>
 </div>

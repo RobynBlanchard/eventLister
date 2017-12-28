@@ -13,10 +13,7 @@
   text-align: center;
   height: 100px;
   position: relative;
-  top:100px ;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 100px;
   margin: auto;
 }
 
@@ -85,6 +82,7 @@ li > a:hover:before {
 
 
 #source {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  right: 0;
 }
