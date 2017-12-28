@@ -17,5 +17,5 @@ def mechanize(artist)
 
   page = link_to_UK_events.click
 
-  puts page.uri.url
+  puts page.uri
 end

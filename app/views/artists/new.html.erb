@@ -1,15 +1,18 @@
 <body class="background">
-<%= form_with scope: :artist, url: artists_path, local: true do |form| %>
-  <p>
-    <%= form.label :artist_name %><br>
-    <%= form.text_field :artist_name %>
-  </p>
+<h1>Add a new artist</h1>
 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class ="new-artist-form">
+  <%= form_with scope: :artist, url: artists_path, local: true do |form| %>
+    <p>
+      <%= form.label :artist_name %><br>
+      <%= form.text_field :artist_name %>
+    </p>
 
-<%= link_to 'Listings', listings_index_path %>
-<%= link_to 'List of artists', artists_path %>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</div>
+
+
 </body>

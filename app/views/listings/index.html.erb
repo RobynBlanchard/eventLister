@@ -1,13 +1,20 @@
 <body class="background">
+<div class="half">
 <% Artist.all.each do |artist| %>
-  <h1 ><%= artist.artist_name %></h1>
-  <% events = Event.where("artist_id = #{artist.id}") %>
-  <% events.each do |event| %>
-  <p>  <%= event.event_title %></p>
-  <p>  <%= event.location %></p>
-  </br>
-  <% end %>
-</br>
+  <div class="tab">
+    <input id="<%= artist.artist_name %>" type="checkbox" name="tabs">
+    <label id="listings-label" for="<%= artist.artist_name %>"><%= artist.artist_name %></label>
+    <div class="tab-content">
+      <% events = Event.where("artist_id = #{artist.id}") %>
+      <% events.each do |event| %>
+      <p>  <%= event.event_title %></p>
+      <p>  <%= event.location %></p>
+      </br>
+      <% end %>
+      </br>
+    </div>
+  </div>
 <% end %>
-<%= link_to 'New artist', new_artist_path %>
+</div>
+
 </body>
