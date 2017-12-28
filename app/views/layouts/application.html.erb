@@ -10,24 +10,42 @@
 
   <body>
     <header class='clearfix'>
-    <div class="left-nav">
-      <ul>
-        <li><%= link_to "Home", homepage_index_path %></li>
-      </ul>
-    </div>
-    <div class="middle-nav">
-      <ul>
-        <li><%= link_to "List Artists", listings_index_path %></li>
-      </ul>
-    </div>
-    <div class="right-nav">
-      <ul>
-        <li><%= link_to "Add Artist", new_artist_path %></li>
-      </ul>
-    </div>
+
   </header>
-  <div class='content'>
-    <%= yield %>
+  <div class="row">
+      <div class="col-sm-2 ">
+        <div id="show_whatever" class="container">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <div id="whatever" class="menu">
+          <div class="home-nav">
+            <ul>
+              <li><%= link_to "Home", homepage_index_path %></li>
+            </ul>
+          </div>
+          <div class="listings-nav">
+            <ul>
+              <li><%= link_to "Listings", listings_index_path %></li>
+            </ul>
+          </div>
+          <div class="add-artist-nav">
+            <ul>
+              <li><%= link_to "Add", new_artist_path %></li>
+            </ul>
+          </div>
+          <div class="edit-artists-nav">
+            <ul>
+              <li><%= link_to "Edit", artists_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-10 ">
+        <div class='content'>
+          <%= yield %>
+      </div>
   </div>
   </body>
 </html>

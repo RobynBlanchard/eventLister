@@ -10,10 +10,12 @@
 
 h1 {
   color: white;
+  font-style: courier;
 }
 
 p {
   color: white;
+  font-style: courier;
 }
 
 body {
@@ -21,14 +23,14 @@ body {
   background: #ecf0f1;
 }
 h1 {
-  text-align: center;
+  text-align: left;
 }
 .half {
   float: left;
   width: 50%;
   padding: 0 1em;
 }
-/* Acordeon styles */
+/* Acordeon styles  - https://codepen.io/raubaca/pen/PZzpVe */
 .tab {
   position: relative;
   margin-bottom: 1px;
@@ -45,18 +47,18 @@ h1 {
   position: relative;
   display: block;
   padding: 0 0 0 1em;
-  background: #16a085;
+  //background: #16a085;
   font-weight: bold;
   line-height: 3;
   cursor: pointer;
+  font-style: courier;
+  font-size: 30px;
 }
-.blue label {
-  background: #2980b9;
-}
+
 .tab-content {
   max-height: 0;
   overflow: hidden;
-  background: #1abc9c;
+//  background: #1abc9c;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
@@ -80,7 +82,7 @@ label::after {
   width: 3em;
   height: 3em;
   line-height: 3;
-  text-align: center;
+  text-align: left;
   -webkit-transition: all .35s;
   -o-transition: all .35s;
   transition: all .35s;
