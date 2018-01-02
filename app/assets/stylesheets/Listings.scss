@@ -8,8 +8,19 @@
   background-attachment: fixed;
 }
 
+.title {
+  //overflow: hidden;
+  //background-color: #333;
+  //background: rgba(204, 204, 204, 0.5);
+  //position: fixed;
+  //top: 0;
+  //width: 100%;
+  //height: 10%;
+}
+
 .listings-content {
   //border:1px solid black;
+
   width: 60%;
 }
 
@@ -26,6 +37,7 @@
 .listings {
   //border:1px solid black;
   position: absolute;
+    //border-top: 1px solid black;
   width: 41%;
   //background-color: #F0F8FF;
   //opacity: 0.1;
@@ -33,6 +45,8 @@
 
 /* Acordeon styles  - https://codepen.io/raubaca/pen/PZzpVe */
 .tab {
+  border-bottom: 2px solid grey;
+
   position: relative;
   left: 0;
   margin-bottom: 1px;
@@ -58,19 +72,20 @@
   //border:1px solid black;
   max-height: 0;
   overflow: hidden;
-//  background: #1abc9c;
+  background: rgba(204, 204, 204, 0.5);
+  //opacity: 0.1;
   -webkit-transition: max-height .35s;
   -o-transition: max-height .35s;
   transition: max-height .35s;
 }
 
 .tab-content p {
-  //margin: 1em;
-  //font-family: courier;
+  margin: 1em;
+  font-family: courier;
 }
 /* :checked */
 input:checked ~ .tab-content {
-  max-height: 50em;
+  max-height: 100%;
 }
 /* Icon */
 label::after {

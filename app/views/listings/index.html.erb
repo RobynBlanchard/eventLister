@@ -16,8 +16,11 @@
       <div class="tab-content">
         <% events = Event.where("artist_id = #{artist.id}") %>
         <% events.each do |event| %>
-        <p>  <%= event.event_title %></p>
-        <p>  <%= event.location %></p>
+        <div class="event">
+          <p>  <%= event.event_title %></p>
+          <p>  <%= event.location %></p>
+        </div>  
+
         </br>
         <% end %>
         </br>

@@ -1,3 +1,3 @@
-describe Artist do
-  it { should have_many :events}
+describe "artist" do
+  it{ is_expected.to have_many(:events) }
 end

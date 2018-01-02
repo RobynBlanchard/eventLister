@@ -1,3 +1,3 @@
-describe Event do
-  it { should belong_to :artist }
+describe "event" do
+  it { should belong_to(:artist) }
 end

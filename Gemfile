@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rails-controller-testing'
 gem 'jquery-rails'
 gem 'mechanize'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -41,6 +42,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+
 end
 
 group :development do
