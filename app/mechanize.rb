@@ -1,19 +1,21 @@
 require 'mechanize'
 
-mechanize = Mechanize.new
+def mechanize(artist)
+  mechanize = Mechanize.new
 
-page = mechanize.get('https://www.residentadvisor.net/dj.aspx')
+  page = mechanize.get('https://www.residentadvisor.net/dj.aspx')
 
-link = page.link_with(text: 'Denis Sulta')
+  link = page.link_with(text: artist)
 
-page = link.click
+  page = link.click
 
-link_to_event = page.link_with(text: 'Events')
+  link_to_event = page.link_with(text: 'Events')
 
-page = link_to_event.click
+  page = link_to_event.click
+  artist = artist.downcase.delete(' ')
+  link_to_UK_events = page.link_with(:href => "/dj/#{artist}/dates?ctry=3")
 
-link_to_UK_events = page.link_with(:href => '/dj/denissulta/dates?ctry=3')
+  page = link_to_UK_events.click
 
-page = link_to_UK_events.click
-
-puts page.uri
+  puts page.uri
+end

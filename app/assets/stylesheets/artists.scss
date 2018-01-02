@@ -1,0 +1,45 @@
+// Place all the styles related to the Artists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.background {
+  background-image: image-url("listings_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.new-artist-form {
+  height: 500px;
+  position: relative;
+  top:100px ;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.new-artist-form p {
+  color: white;
+}
+
+.title h1 {
+  color: white;
+  font-family: courier;
+}
+
+.table {
+  color: white;
+}
+.table a{
+  color: white;
+}
+
+.input-text p {
+  color: black;
+}
+
+#new p{
+  color: black;
+}

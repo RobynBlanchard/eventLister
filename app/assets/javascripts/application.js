@@ -10,6 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap.min
+
+$(document).on('turbolinks:load', function () {
+  $('div#whatever').toggle();
+  $('div#show_whatever').click(function(event){
+    event.preventDefault();
+    $('div#whatever').toggle();
+  });
+});
+
+
+//TO DO - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js

@@ -1,0 +1,31 @@
+<body class="background">
+<div class="title">
+  <h1>Listing artists</h1>
+</div>
+
+<div class="new-artist-form">
+<div class="table">
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Url</th>
+  </tr>
+
+  <% if Artist.nil? == false %>
+  <% Artist.all.each do |artist| %>
+    <tr>
+      <td><%= artist.artist_name %></td>
+      <td><%= artist.url %></td>
+      <td><%= link_to 'Show', artist_path(artist) %></td>
+      <td><%= link_to 'Destroy', artist_path(artist),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </tr>
+  <% end %>
+  <% end %>
+</table>
+</div>
+</div>
+
+</body>

@@ -1,9 +1,10 @@
-<div class=centered>
-  <h1>UK Event Tracker</h1>
-  <p id="listings">
-    <%= link_to 'Listings', events_index_path %>
-  </p>
-  <p id="uploads">
-    <%= link_to 'List of uploads', uploads_path %>
-  </p>
+<body class="home">
+<div class="main-title">
+  <h1 id="home-age-title" >UK Event Tracker</h1>
 </div>
+<div class="links">
+  <li><a id="listings"><%= link_to 'Listings', listings_index_path %></a></li>
+  <li><a id="uploads"><%= link_to 'New artist', new_artist_path %></a></li>
+</div>
+<a id="source" href="https://www.freepik.com/free-vector/techno-party_761404.htm">Background image: Designed by Freepik</a>
+</body>
