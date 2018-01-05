@@ -10,9 +10,9 @@
 
   <body>
     <header class='clearfix'>
-
     </header>
-  <div class="row">
+
+    <div class="row">
       <div class="col-sm-1 ">
         <div id="show_whatever" class="container">
           <div class="bar1"></div>
@@ -42,7 +42,12 @@
           </div>
         </div>
       </div>
+
       <div class="col-sm-11 ">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+
         <div class='content'>
           <%= yield %>
       </div>

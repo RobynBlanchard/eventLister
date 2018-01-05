@@ -12,7 +12,11 @@ class ScraperService
     list_elements.each do |event|
       event_title = event.xpath("a").text
       event_location = event.xpath("span").text
-      Event.first_or_create(event_title: event_title, location: event_location, artist_id: artist.id)
+      #first_or_create not working, consider using find or create ?
+      unless Event.exists?(artist_id: artist.id, location: event_location, event_title: event_title)
+        event = Event.create(artist_id: artist.id, location: event_location, event_title: event_title)
+        event.save
+      end
     end
   end
 
