@@ -1,7 +1,5 @@
 <body class="background">
-<div class="title">
-  <h1>Add a new artist</h1>
-</div>
+<% title "Add a new artist" %>
 
 <div class ="new-artist-form" id="new">
   <%= form_with scope: :artist, url: artists_path, local: true do |form| %>

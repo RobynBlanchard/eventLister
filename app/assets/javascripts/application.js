@@ -16,13 +16,26 @@
 //= require_tree .
 //= require bootstrap.min
 
-$(document).on('turbolinks:load', function () {
-  $('div#whatever').toggle();
-  $('div#show_whatever').click(function(event){
-    event.preventDefault();
-    $('div#whatever').toggle();
-  });
+//$(document).on('turbolinks:load', function () {
+$(document).ready(function(){
+    $("button").click(function(){
+      openNav()
+    });
 });
+
+function openNav() {
+
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    $(".menu-button").hide();
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    $(".menu-button").show();
+
+}
 
 
 //TO DO - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js

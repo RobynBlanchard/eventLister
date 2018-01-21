@@ -18,53 +18,78 @@
    margin: 0;
  }
 
- .content {
-   margin: 10px auto;
-   width: 70%;
- }
+ .header {
+   display: inline-block;
+   width: 100%;
+   border: 1px solid red;
+   width:100%;
+   height:100px;
+   position:relative;
 
- .clearfix {
-   overflow: hidden;
  }
+ .menu-button{
+   color: white;
+   border: 2px solid green;
+   position:absolute; left:0%; width:50%; height:100%;
+   margin: auto;
+ }
+.page-title{
+  float: left;
+  color: black;
+  font-family: courier;
+  font-size: 50px;
+  font-weight: bold;
+  border: 2px solid black;
+  position:absolute; left:22%; width:50%; height:100%;
 
-.menu a{
-  color: white;
 }
 
-ul {
-  list-style-type: none;
-}
-
-.hidden {
-  display: none;
-}
-
-
-/*menu bar https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js*/
- .container {
-     display: inline-block;
-     cursor: pointer;
-     float: left;
-     margin: 28px;
-     /*border: 1px solid #4CAF50;*/
+ .sidenav {
+     height: 100%;
+     width: 0;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: #111;
+     overflow-x: hidden;
+     transition: 0.5s;
+     padding-top: 60px;
  }
 
- .bar1, .bar2, .bar3 {
-     width: 35px;
-     height: 5px;
-     background-color: #333;
-     margin: 6px 0;
-     transition: 0.4s;
+ .sidenav a {
+     padding: 8px 8px 8px 32px;
+     text-decoration: none;
+     font-size: 25px;
+     color: white;
+     display: block;
+     transition: 0.3s;
  }
 
- .change .bar1 {
-     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-     transform: rotate(-45deg) translate(-9px, 6px);
+ .sidenav a:hover {
+     color: #f1f1f1;
  }
 
- .change .bar2 {opacity: 0;}
+ .sidenav .closebtn {
+     position: absolute;
+     top: 0;
+     right: 25px;
+     font-size: 36px;
+     margin-left: 50px;
+ }
 
- .change .bar3 {
-     -webkit-transform: rotate(45deg) translate(-8px, -8px);
-     transform: rotate(45deg) translate(-8px, -8px);
+ #main {
+     transition: margin-left .5s;
+     padding: 16px;
+ }
+
+
+ @media screen and (max-height: 450px) {
+   .sidenav {padding-top: 15px;}
+   .sidenav a {font-size: 18px;}
+ }
+
+ .main-content {
+   max-width: 1000px;
+   margin: auto;
  }

@@ -12,4 +12,8 @@ class ListingsController < ApplicationController
     end
   end
 
+  def title(page_title)
+    content_for :title, "Listings"
+  end
+
 end
