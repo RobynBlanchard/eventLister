@@ -18,17 +18,17 @@
     </div>
     
     <div id="main">
-      <header class="header">
         <div class="menu-button">
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
         </div>
-        <div class="page-title">
-          <%= content_for?(:title) ? yield(:title) : 'Personalised Event Lister' %>
+        <div class="centered-content">
+          <div class="page-title">
+            <%= content_for?(:title) ? yield(:title) : 'Personalised Event Lister' %>
+          </div>
+          <div class="main-content">
+            <%= yield %>
+          </div>
         </div>
-      </header>
-      <div class="main-content">
-        <%= yield %>
-      </div>
     </div>
 
 
