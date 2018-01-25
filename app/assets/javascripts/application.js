@@ -17,7 +17,7 @@
 //= require bootstrap.min
 
 //$(document).on('turbolinks:load', function () {
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
     $("button").click(function(){
       openNav()
     });
@@ -36,6 +36,15 @@ function closeNav() {
     $(".menu-button").show();
 
 }
+
+//do this instead?
+$(document).on('turbolinks:load', function () {
+  $('div#whatever').toggle();
+  $('div#show_whatever').click(function(event){
+    event.preventDefault();
+    $('div#whatever').toggle();
+  });
+});
 
 
 //TO DO - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js
