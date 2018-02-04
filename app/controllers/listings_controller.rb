@@ -7,7 +7,9 @@ class ListingsController < ApplicationController
   def refresh_listings
     # TO DO - move into a refresh service?
     Artist.all.each do |artist|
-      new_scrape = ScraperService.new(artist)
+      new_noko = NokogiriObject.new(artist)
+      noko = new_noko.nokogiri_object
+      new_scrape = ScraperService.new(artist, noko)
       new_scrape.scrapeRA
     end
   end

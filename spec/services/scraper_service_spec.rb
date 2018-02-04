@@ -3,25 +3,31 @@ require "rails_helper"
 describe ScraperService do
   context 'when URL is valid' do
     describe '#scrape_RA' do
-      it "it saves one or more events, if the events are not already saved" do
-        artist = Artist.create(artist_name: 'Jackmaster', url: "https://www.residentadvisor.net/dj/jackmaster/dates?ctry=3")
-        scraper = ScraperService.new(artist)
-        scraper.scrapeRA
-        expect(Event.where(artist_id: artist.id)).to exist
-      end
+    #   it "it saves one or more events, if the events are not already saved" do
+    ##      artist = Artist.create(artist_name: 'Jackmaster', url: "https://www.residentadvisor.net/dj/jackmaster/dates?ctry=3")
+      #   scraper = ScraperService.new(artist)
+      #   scraper.scrapeRA
+    #     expect(Event.where(artist_id: artist.id)).to exist
+    #   end
 
       # check that it actually saves an event title, location etc?
       it "does not throw an error" do
         VCR.use_cassette('correct_result') do
+          # TO-DO - change this so testing if artist name, location etc scraped separately
           artist = Artist.create(artist_name: 'Jackmaster', url: "https://www.residentadvisor.net/dj/jackmaster/dates?ctry=3")
-          scraper = ScraperService.new(artist)
+          noko = NokogiriObject.new(artist)
+          noko2 = noko.nokogiri_object
+          scraper = ScraperService.new(artist, noko2)
           res = scraper.scrapeRA
-          byebug
-          expect(res.keys).to include('data')
-          expect(res['data'].keys).to include('children')
-          expect(res['data']['children'].count).to be >= 1
-          expect(res['data']['children'][0].keys).to include('data')
-          # test more stuff!
+          expect(Event.where(artist_id: artist.id, location: "at XOYO, London", event_title: "Artwork + Jackmaster + Kornél Kovács", event_date: "Fri, 16 Feb 2018")).to exist
+          expect(Event.where(artist_id: artist.id, location: "at Red Bar, Midlands", event_title: "Wigflex Basement Sessions", event_date: "Fri, 02 Mar 2018")).to exist
+          expect(Event.where(artist_id: artist.id, location: "at Canal Mills, Leeds", event_title: "The Garden Party 2018: Part One", event_date: "Sun, 06 May 2018")).to exist
+          expect(Event.where(artist_id: artist.id, location: "at Secret Location - Edinburgh, Edinburgh", event_title: "ODYSSEY. 015 - Jackmaster", event_date: "Thu, 17 May 2018")).to exist
+          expect(Event.where(artist_id: artist.id, location: "at Damyns Hall Aerodrome, London", event_title: "We Are FSTVL 2018 - Saturday", event_date: "Sat, 26 May 2018")).to exist
+          expect(Event.where(artist_id: artist.id, location: "at Riverside Museum, Glasgow", event_title: "Electric Frog & Pressure Riverside Festival 2018", event_date: "Sat, 26 May 2018")).to exist
+          expect(Event.where(artist_id: artist.id, location: "at Eastville Park, West + Wales", event_title: "Love Saves The Day 2018 - Saturday", event_date: "Sat, 26 May 2018")).to exist
+          expect(Event.where(artist_id: artist.id, location: "at Carreglwyd Estate, West + Wales", event_title: "Gottwood Festival 2018", event_date: "Thu, 07 Jun 2018")).to exist
+
         end
       end
     end
