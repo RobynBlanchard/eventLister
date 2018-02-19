@@ -6,6 +6,8 @@
 
   <div class="listings">
     <h3> Click to expand list of events </h3>
+    <%= select "obj", "test", @locations.each_with_index.map {|name, index| [name,index]} %>
+
   <% Artist.all.each do |artist| %>
     <div class="tab">
       <input id="<%= artist.artist_name %>" type="checkbox" name="tabs">
@@ -16,6 +18,8 @@
         <div class="event">
           <p>  <%= event.event_title %></p>
           <p>  <%= event.location %></p>
+          <p>  <%= event.event_date %></p>
+
         </div>
 
         </br>

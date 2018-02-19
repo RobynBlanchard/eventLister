@@ -3,15 +3,7 @@ require "rails_helper"
 describe ScraperService do
   context 'when URL is valid' do
     describe '#scrape_RA' do
-    #   it "it saves one or more events, if the events are not already saved" do
-    ##      artist = Artist.create(artist_name: 'Jackmaster', url: "https://www.residentadvisor.net/dj/jackmaster/dates?ctry=3")
-      #   scraper = ScraperService.new(artist)
-      #   scraper.scrapeRA
-    #     expect(Event.where(artist_id: artist.id)).to exist
-    #   end
-
-      # check that it actually saves an event title, location etc?
-      it "does not throw an error" do
+      it "saves a title, location and date for all the artist's events" do
         VCR.use_cassette('correct_result') do
           # TO-DO - change this so testing if artist name, location etc scraped separately
           artist = Artist.create(artist_name: 'Jackmaster', url: "https://www.residentadvisor.net/dj/jackmaster/dates?ctry=3")
@@ -27,7 +19,6 @@ describe ScraperService do
           expect(Event.where(artist_id: artist.id, location: "at Riverside Museum, Glasgow", event_title: "Electric Frog & Pressure Riverside Festival 2018", event_date: "Sat, 26 May 2018")).to exist
           expect(Event.where(artist_id: artist.id, location: "at Eastville Park, West + Wales", event_title: "Love Saves The Day 2018 - Saturday", event_date: "Sat, 26 May 2018")).to exist
           expect(Event.where(artist_id: artist.id, location: "at Carreglwyd Estate, West + Wales", event_title: "Gottwood Festival 2018", event_date: "Thu, 07 Jun 2018")).to exist
-
         end
       end
     end

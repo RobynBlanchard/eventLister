@@ -10,7 +10,9 @@ class ScraperService
     @nokogiri = nokogiri
   end
 
+
   def scrapeRA
+    
     count = 0
     dates = Array.new
     dates_count = 0
@@ -39,6 +41,7 @@ class ScraperService
 
   def event_date(event)
     event.text.split('/').first.rstrip
+
   end
 
   private

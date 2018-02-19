@@ -21,6 +21,7 @@
   .centered-content {
     max-width: 1000px;
     margin: auto;
+  //  border: solid black 2px;
   }
  .menu-button{
    max-width: 50px;
@@ -30,6 +31,8 @@
 .page-title{
   font-family: courier;
   font-size: 40px;
+  margin: auto;
+  border: solid black 2px;
 }
 
  .sidenav {
